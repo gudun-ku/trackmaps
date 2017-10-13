@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<!---->
+<BC4JConfig xmlns="http://xmlns.oracle.com/bc4j/configuration" version="11.1">
+    <AppModuleConfigBag ApplicationName="gktarkos.ru.data.pivtorg.AppModule">
+    <AppModuleConfig name="AppModuleLocal" jbo.project="gktarkos.ru.model.common.Model"
+                     ApplicationName="gktarkos.ru.data.pivtorg.AppModule"
+                     DeployPlatform="LOCAL">
+      <Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="pivtorg"/>
+      <Security AppModuleJndiName="gktarkos.ru.data.pivtorg.AppModule"/>
+    </AppModuleConfig>
+  </AppModuleConfigBag>  
+</BC4JConfig>

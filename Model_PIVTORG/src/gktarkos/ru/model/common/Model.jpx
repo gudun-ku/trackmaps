@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+<!---->
+<JboProject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Model"
+  Version="12.2.1.12.24"
+  SeparateXMLFiles="true"
+  PackageName="gktarkos.ru.model.common">
+  <DesignTime>
+    <Attr Name="_DTExpressionTypeChecking" Value="true"/>
+    <Attr Name="_jbo.TypeMapEntries" Value="OracleApps"/>
+    <Attr Name="_jprName" Value="../../../../../Model_PIVTORG.jpr"/>
+    <Attr Name="_NamedConnection" Value="pivtorg_svc_maps"/>
+    <Attr Name="_appModuleNames0" Value="gktarkos.ru.data.pivtorg.AppModule"/>
+    <Attr Name="_appModuleNames1" Value="gktarkos.ru.data.pvreg.AppModule"/>
+  </DesignTime>
+  <Containee
+    Name="pivtorg"
+    PackageName="gktarkos.ru.data.pivtorg"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+      <Attr Name="_AM" Value="true"/>
+      <Attr Name="_EO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="pvreg"
+    PackageName="gktarkos.ru.data.pvreg"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+      <Attr Name="_AM" Value="true"/>
+      <Attr Name="_EO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <AppModuleUsage
+    Name="AppModule"
+    FullName="gktarkos.ru.data.pivtorg.AppModule"
+    ConfigurationName="gktarkos.ru.data.pivtorg.AppModuleLocal"
+    SharedScope="2"/>
+</JboProject>

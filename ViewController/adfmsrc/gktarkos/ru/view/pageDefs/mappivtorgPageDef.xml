@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.12.24" id="mappivtorgPageDef"
+                Package="gktarkos.ru.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="LOVTorgAgentPivtorg" RangeSize="100" DataControl="AppModuleDataControl" id="LOVTorgAgent1Iterator"/>
+    
+  </executables>
+  <bindings>
+    <listOfValues IterBinding="LOVTorgAgent1Iterator" id="TName" DTSupportsMRU="false" Uses="LOV_TorgCode"
+                  StaticList="false">
+      <AttrNames>
+        <Item Value="TName"/>
+      </AttrNames>
+    </listOfValues>
+    <list IterBinding="LOVTorgAgent1Iterator" ListOperMode="navigation" ListIter="LOVTorgAgent1Iterator"
+          id="LOVTorgAgent1" DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="TorgCode"/>
+        <Item Value="TName"/>
+      </AttrNames>
+    </list>
+    <list IterBinding="LOVTorgAgent1Iterator" StaticList="false" Uses="LOV_TorgCode" id="TorgCode"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="LOVTorgAgent1Iterator" id="TName1">
+      <AttrNames>
+        <Item Value="TName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="LOVTorgAgent1Iterator" id="Telephon">
+      <AttrNames>
+        <Item Value="Telephon"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="LOVTorgAgent1Iterator" id="DirName">
+      <AttrNames>
+        <Item Value="DirName"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="LOVTorgAgent1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="LOVTorgAgent1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="LOVTorgAgent1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="LOVTorgAgent1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <list IterBinding="LOVTorgAgent1Iterator" ListOperMode="navigation"
+          id="LOVTorgAgent12" DTSupportsMRU="false" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="TorgCode"/>
+        <Item Value="TName"/>
+      </AttrNames>
+    </list>
+  </bindings>
+</pageDefinition>

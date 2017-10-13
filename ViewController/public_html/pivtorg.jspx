@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="MAP PIVTORG" id="d1">
+            <af:messages id="m1"/>
+            <f:facet name="metaContainer">           
+                <af:resource type="javascript" source="http://192.168.106.67:7001/mapviewer/fsmc/jslib/oraclemaps.js"/> 
+                <!-- <af:resource type="javascript" source="http://192.168.106.67:7001//mapviewer/jslib/v2/oraclemapsv2.js"/> -->
+                <af:resource type="javascript">
+                var torgCode;
+                var trackDate;
+                
+                
+                function showByTorgCode()
+                {
+                    showMap(torgCode, trackDate);
+                }    
+                </af:resource>
+                <af:resource type="javascript" source="resources/js/mappivtorg.js"/>    
+                <!-- <af:resource type="javascript" source="resources/js/mapvvtwo.js"/> -->
+            </f:facet> 
+            <af:clientListener method="onPageLoad" type="load"/> 
+            <af:form id="f1">
+                <af:panelGridLayout id="pgl1">
+                    <af:gridRow height="50px" id="gr2">
+                      <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc0">
+                       <af:panelGridLayout id="pgl2">
+                            <af:gridRow height="50px" id="gr4">
+                              
+                             
+                              
+                                
+                                <af:gridCell width="40%" halign="center" valign="middle" id="gc11">
+                                    <!-- Header -->
+                                        <af:selectOneChoice value="#{bindings.LOVTorgAgent1.inputValue}"
+                                                            label="Torg. agent"
+                                                            shortDesc="#{bindings.LOVTorgAgent1.hints.tooltip}"
+                                                            id="soc1"
+                                                            binding="#{TrackPropertiesPivtorg.torgValue}"
+                                                          
+                                                            autoSubmit="true" immediate="true"
+                                                            valueChangeListener="#{TrackPropertiesPivtorg.soc1ValueChangeListener}"
+                                                            showRequired="false" editable="always">
+                                            <f:selectItems value="#{bindings.LOVTorgAgent1.items}" id="si1"/>
+                                            <f:validator binding="#{bindings.LOVTorgAgent1.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:gridCell>
+                                    
+                                                                       
+                                <af:gridCell width="20%" halign="center" valign="middle" id="gc2">
+                                        <af:inputDate label="Choose date" id="id1" binding="#{backingBeanScope.backing_mappage.itTrackDate}"
+                                                      value="#{TrackPropertiesPivtorg.trackDate}" autoSubmit="true"
+                                                  immediate="true">                                            
+                                        </af:inputDate>
+                                    </af:gridCell>
+                                <af:gridCell width="20%" halign="start" valign="middle" id="gc3">
+                                    <af:button text="Show MAP" id="cb1" binding="#{TrackPropertiesPivtorg.btnShow}"                                                                                                    
+                                               actionListener="#{TrackPropertiesPivtorg.btnClickListener}"> 
+                                         
+                                        </af:button>
+                                </af:gridCell>
+                               
+                                
+                                </af:gridRow>
+                            </af:panelGridLayout>
+                        </af:gridCell>                        
+                    </af:gridRow>
+                    <af:gridRow height="100%" id="gr1">
+                        <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc5">
+                            <af:decorativeBox theme="dark" id="db2">
+                                <f:facet name="center">
+                                    <af:decorativeBox theme="medium" id="map"/>
+                                </f:facet>
+                            </af:decorativeBox>
+                        </af:gridCell>
+                    </af:gridRow>
+                </af:panelGridLayout>
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>

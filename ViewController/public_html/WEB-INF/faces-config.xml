@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<faces-config version="2.1" xmlns="http://java.sun.com/xml/ns/javaee">
+  <application>
+    <default-render-kit-id>oracle.adf.rich</default-render-kit-id>
+  </application>
+  <managed-bean>
+    <managed-bean-name>TrackPropertiesPivtorg</managed-bean-name>
+    <managed-bean-class>gktarkos.ru.view.TrackPropertiesPivtorg</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+  <managed-bean>
+    <managed-bean-name>TrackPropertiesPvreg</managed-bean-name>
+    <managed-bean-class>gktarkos.ru.view.TrackPropertiesPvreg</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+</faces-config>
